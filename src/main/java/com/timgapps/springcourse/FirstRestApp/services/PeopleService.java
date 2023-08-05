@@ -1,7 +1,8 @@
 package com.timgapps.springcourse.FirstRestApp.services;
 
 import com.timgapps.springcourse.FirstRestApp.models.Person;
-import com.timgapps.springcourse.FirstRestApp.repositories. PeopleRepository;
+import com.timgapps.springcourse.FirstRestApp.repositories.PeopleRepository;
+import com.timgapps.springcourse.FirstRestApp.util.PersonNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,6 +27,7 @@ public class PeopleService {
 
     public Person findOne(int id) {
         Optional<Person> foundPerson = peopleRepository.findById(id);
-        return foundPerson.orElse(null);
+//        return foundPerson.orElse(null);
+        return foundPerson.orElseThrow(PersonNotFoundException::new);
     }
 }
