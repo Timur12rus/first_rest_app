@@ -40,6 +40,16 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!--Добавим зависимость Hibernate Validator Engine, чтобы проверять соответствие JSON'а получаемого от
+		клиента в теле запроса (RequestBody) -->
+		<!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
+		<dependency>
+			<groupId>org.hibernate.validator</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>6.1.6.Final</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
