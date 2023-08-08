@@ -5,6 +5,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "Person")
@@ -29,6 +30,19 @@ public class Person {
     @Email
     @NotEmpty(message = "Name should not be empty")
     private String email;
+
+    // поле не приходит от клиента, а задается на сервере
+    @Column(name="created_at")
+    private LocalDateTime created_at;
+
+    // поле не приходит от клиента, а задается на сервере
+    @Column(name="updated_at")
+    private LocalDateTime updatedAt;
+
+    // поле не приходит от клиента, а задается на сервере
+    @Column(name="created_who")
+    @NotEmpty
+    private String createdWho;
 
     public Person() {
     }
@@ -69,5 +83,29 @@ public class Person {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public LocalDateTime getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreatedAt(LocalDateTime created_at) {
+        this.created_at = created_at;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public String getCreatedWho() {
+        return createdWho;
+    }
+
+    public void setCreatedWho(String createdWho) {
+        this.createdWho = createdWho;
     }
 }
