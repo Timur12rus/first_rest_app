@@ -23,6 +23,4 @@ public class FirstRESTController {
     public String sayHello() {
         return "Hello world!";
     }
-
-
 }
