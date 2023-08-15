@@ -28,7 +28,6 @@ public class PersonDTO {
     @Min(value = 0, message = "Age should be greater than 0")
     private int age;
 
-    @Column(name = "email")
     @Email
     @NotEmpty(message = "Name should not be empty")
     private String email;
